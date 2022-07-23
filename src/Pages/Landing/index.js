@@ -1,5 +1,6 @@
 import React from 'react'
 import landingImg from '../../Static/Images/landingImg.jpg'
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
@@ -16,9 +17,11 @@ const Landing = () => {
             <p className="text-xl leading-4 m-[10px]">
               Start bookmarking like the pro you are
             </p>
-            <button className="mt-[50px] bg-[#9b09b5] hover:bg-[#c688d1] h-[60px] w-[200px] rounded text-xl font-bold text-[#f3dcf7] hover:text-[#f3dcf7]">
-              Get Started
-            </button>
+            <Link to="/signup">
+              <button className="mt-[50px] bg-[#9b09b5] hover:bg-[#c688d1] h-[60px] w-[200px] rounded text-xl font-bold text-[#f3dcf7] hover:text-[#f3dcf7]">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>

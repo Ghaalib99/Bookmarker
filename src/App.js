@@ -1,21 +1,34 @@
 import './App.css';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
-import Home from './Pages/Home';
 import Landing from './Pages/Landing';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Bookmark from './Pages/Bookmark';
 
 function App() {
   return (
-    <div className="bg-[#f3dcf7] py-[90px] h-[100vh] relative">
-      <Header />
-      {/* <Landing /> */}
-      {/* <Signup /> */}
-      {/* <Login /> */}
-      <Home />
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-[#f3dcf7] py-[90px] h-[100vh] relative">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/bookmark">
+            <Bookmark />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,16 @@
-import React from 'react'
+import { useState } from "react";
 
-const Home = () => {
+
+
+const Bookmark = () => {
+    const [linkName, setLinkName] = useState("");
+    const [linkAddress, setLinkAddress] = useState("")
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     setLinkName("My other link 2")
+    // };
+
   return (
     <>
       <div className="w-[80%] mx-auto h-[90%] my-[40px] shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] flex">
@@ -17,6 +27,8 @@ const Home = () => {
               <input
                 type="email"
                 placeholder="My sample link"
+                value={linkName}
+                onChange={(e) => setLinkName(e.target.value)}
                 className="block w-[90%] h-[50px] p-[10px] rounded bg-[#f3dcf7] border-[#9b09b5] border-[2px] outline-none text-[#9b09b5] text-xl font-bold "
               />
             </div>
@@ -27,6 +39,8 @@ const Home = () => {
               <input
                 type="text"
                 placeholder="https://link.com"
+                value={linkAddress}
+                onChange={(e) => setLinkAddress(e.target.value)}
                 className="block w-[90%] h-[50px] p-[10px] rounded bg-[#f3dcf7] border-[#9b09b5] border-[2px] outline-none text-[#9b09b5] text-xl font-bold "
               />
             </div>
@@ -40,9 +54,10 @@ const Home = () => {
         <div className="flex-1 px-[30px] py-[20px]">
           <div className=" flex flex-col text-center text-[#9b09b5] items-center w-[90%] h-[90%] m-auto overflow-auto">
             <div className="w-[90%] h-[100px] bg-[#9b09b5] hover:bg-[#c688d1] m-2 text-white hover:text-[#9b09b5] rounded p-4 text-left text-[35px] font-bold">
-              <span>1. </span>
+              {/* <span>1. </span> */}
               <a href="" className=" mt-2 ml-3 underline ">
-                My favourite link 1
+                { linkName }
+                { linkAddress }
               </a>
             </div>
           </div>
@@ -52,4 +67,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Bookmark
